@@ -18,9 +18,11 @@ const Editor = ({...props})=>{
         lineWrapping: true
     };
     return(
-        <div>
-            <button>Expand</button>
-            <button>Collapse</button>
+        <div className="code-editor">
+            <div>
+                <p>{props.type}</p>
+                <button>O/C</button>
+            </div>
             <CodeMirror  value={props.value} options={{mode:props.mode,...codeMirrorOptions}} onBeforeChange={props.onBeforeChange} />
         </div>
     )

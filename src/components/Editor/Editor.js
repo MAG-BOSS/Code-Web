@@ -14,16 +14,16 @@ const Editor = ({...props})=>{
     const codeMirrorOptions = {
         theme : "material",
         lineNumbers : "true",
-        scrollbarStyle: null,
+        scrollbarStyle: "native",
         lineWrapping: true
     };
     return(
         <div className="code-editor">
-            <div>
+            <div className="code-header">
                 <p>{props.type}</p>
                 <button>O/C</button>
             </div>
-            <CodeMirror  value={props.value} options={{mode:props.mode,...codeMirrorOptions}} onBeforeChange={props.onBeforeChange} />
+            <CodeMirror className="editor-box"  value={props.value} options={{mode:props.mode,...codeMirrorOptions}} onBeforeChange={props.onBeforeChange} />
         </div>
     )
 }

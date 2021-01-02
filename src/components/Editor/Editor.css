@@ -2,7 +2,7 @@
     height: 90% !important;
 }
 
-.code-editor{
+.code-editorfull{
     width: 33.3%;
     padding-left: 1.5%;
     padding-right: 1.2%;
@@ -12,6 +12,9 @@
     padding-bottom: 0.5em;
 }
 
+.code-editorcollapse{
+    width: 10%;
+}
 .code-header{
     height: 30px;
     content: attr(title);
@@ -23,8 +26,8 @@
     background-color: rgb(8, 8, 8);
 }
 
-button{
-    margin-left: 80%;
+.collapse-button{
+    margin-left: 40%;
 }
 
 .editor-box{

@@ -21,11 +21,11 @@ const Editor = ({...props})=>{
     const [buttonState,setButtonState]=useState(false);
 
     return(
-        <div className={"code-editor" + (buttonState?"collapse":"full")}>
+        <div className={"code-editor-" + (buttonState?"collapse":"full")}>
             <div className="code-header">
                 <p>{props.type}</p>
                 <button className="collapse-button" type="button" onClick={()=> setButtonState(buttonState? false:true)}>O/C</button>
-                <button type="button" onClick={()=> setButtonState(buttonState? false:true)}>Refresh</button>
+                
                 </div>
             <CodeMirror className="editor-box"  value={props.value} options={{mode:props.mode,...codeMirrorOptions}} onBeforeChange={props.onBeforeChange} />
         </div>

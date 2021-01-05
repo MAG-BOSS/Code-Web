@@ -2,7 +2,7 @@ import React,{useState,useEffect} from "react";
 import {useDebounce} from "use-debounce";
 
 import Editor from "../components/Editor/Editor";
- import "./App.css";
+import "./App.css";
 
 const App = ()=>{
     const [htmlVal, sethtml]=useState(null);

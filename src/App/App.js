@@ -9,7 +9,7 @@ const App = ()=>{
     const [htmlVal, sethtml]=useState(null);
     const [cssVal, setcss]=useState(null);
     const [jsVal,setjs]=useState(null);
-    const [output,setOutput]=useState("");
+    const [output,setOutput]=useState(null);
 
     const dhtml=useDebounce(htmlVal,250);
     const dcss=useDebounce(cssVal,250);
@@ -21,7 +21,7 @@ const App = ()=>{
         <html lang="en">
         <head>
           <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
+          <meta name="viewport" content="width=device-width" initial-scale=1.0">
           <meta http-equiv="X-UA-Compatible" content="ie=edge">
           <title>Document</title>
           <style>
@@ -42,9 +42,9 @@ const App = ()=>{
         <div className="app">
             <div className="app-header">
                 <h1>CODEWEB</h1>
-                <label class="switch">
+                <label className="switch">
                   <input type="checkbox"/>
-                  <span class="slider round"></span>
+                  <span className="slider round"></span>
                 </label>
             </div>
             <div className="editor-pane">

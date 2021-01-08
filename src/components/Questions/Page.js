@@ -1,12 +1,15 @@
 import React from "react";
 
-import Header from "./Header";
+import Header from "./Header/Header";
+import {getTasks} from "../Questions/tasks/Tasks";
+import "./Page.css";
 
 const Page = ()=>{
+    const tasks = getTasks();
     return(
-        <div>
+        <div className="page">
             <Header/>
-            Hello Page
+            <iframe className="question-page" srcDoc={tasks[0].src} title="question"/>
         </div>
     )
 }

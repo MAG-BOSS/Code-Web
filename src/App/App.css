@@ -34,7 +34,7 @@ html{
 
 .result-pane{
     position:fixed;
-    margin-left: 40%;
+    margin-left: 40.1%;
     margin-top: 0;
     width: 30%;
     height: 100%;
@@ -46,10 +46,10 @@ iframe{
 }
 
 .result-header{
-    
+    padding-top: 1%;
     text-align: center;
     padding-bottom: 0.3em;
-    color: red;
+    color:aliceblue;
     background-color: rgb(24, 23, 23)
 }
 
@@ -113,8 +113,13 @@ iframe{
     border-radius: 50%;
   }
 
-.question-pane{
-    margin-left: 70%;
-    width: 100%;
+  .question-pane{
+    position:fixed;
+    width: 29.8%;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 70.2%;
+    margin-right:0%;
+    padding-right: 0.1%;
     height: 100%;
-}
+  }

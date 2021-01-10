@@ -9,8 +9,13 @@ const tasks = [
         src:`<html><body>Keep it up</body></html>`,
         description:"Replcate it",
         maxScore:10
+    },
+    {
+        id:3,
+        src:`<html><body>Work In Progress</body></html>`,
+        description:"Do Now!",
+        maxScore:10
     }
-
 ];
 
 export const getTasks=() => {

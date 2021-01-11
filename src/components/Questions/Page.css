@@ -5,7 +5,7 @@
 }
 
 .question-page{
-    height: 100%;
+    height: 83%;
     width: 100%;
 }
 .header{
@@ -15,13 +15,26 @@
     align-items: center;
     text-align: center;
     color:aliceblue;
-    background-color: rgb(24,24,23);
+    background-color: rgb(12,12,12);
     display: flex;
 }
 
 .userChoice-list{
-    margin-left: 0%;
+    margin-left: 5%;
     color: rgb(242, 247, 247);
+    background-color: rgb(12,12,12);
+    cursor: pointer;
+}
+
+.userChoice-list form select{
+  border-radius: 10px;
+  padding: 0.2em;
+  background-color: #383838;
+  color: white;
+}
+
+.userChoice-list form select:hover{
+  background-color: rgb(28, 28, 29);
 }
 
 h1{
@@ -31,21 +44,21 @@ h1{
     margin-right: 3%;
 }
 .box{
-    margin-right: 2%;
+    margin-right: 70%;
 }
 .button {
-    background-color:white;
+  margin-left: 15%;
+    background-color:#383838;
     font-size: 1em;
-    padding: 0.2em;
-    color: rgb(27, 27, 27);
-    border: 2px solid #f6f8f7;
-    border-radius: 10px;
+    padding: 0.3em;
+    color:white;
+    border-radius: 20px;
     text-decoration: none;
     cursor: pointer;
     transition: all 0.3s ease-out;
   }
   .button:hover {
-    background: #eaf8f8;
+    background:blue;
   }
   
   .overlay {
@@ -66,6 +79,7 @@ h1{
   
   .popup {
     margin: 70px auto;
+    height:70%;
     padding: 20px;
     background: #fff;
     border-radius: 5px;
@@ -90,10 +104,13 @@ h1{
     color: #333;
   }
   .popup .close:hover {
-    color: #06D85F;
+    color:black;
   }
   .popup .content {
+    text-align: justify;
+    white-space: pre;
     color: #333;
-    max-height: 30%;
+    max-height: 90%;
     overflow: auto;
   }
+  

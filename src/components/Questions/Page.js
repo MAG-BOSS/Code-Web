@@ -26,7 +26,7 @@ const Page = ()=>{
                 </div>
                 <div id="popup1" className="overlay">
 	                <div className="popup">
-		                <h2>Question Description</h2>
+		                <h2>{Tasks[userChoice-1].name}</h2>
 		                <a className="close" href="#">&times;</a>
 		                <div className="content">
 			                <p>{Tasks[userChoice-1].description}</p>

@@ -29,3 +29,10 @@
 ## bot challenge
 * bot_challenge
   - utter_iamabot
+
+## app enquiry
+* greet
+  - utter_greet
+* mood_great
+  - utter_happy
+* 

@@ -19,7 +19,7 @@ responses:
   - text: "Did that help you?"
 
   utter_happy:
-  - text: "Great, carry on!"
+  - text: "Great ! How can I help you?"
 
   utter_goodbye:
   - text: "Bye"

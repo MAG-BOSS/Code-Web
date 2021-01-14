@@ -1,13 +1,14 @@
-const express = require('express');
-const router = express.Router();
-const gravatar = require('gravatar');
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const passport = require('passport');
-const validateRegisterInput = require('../validation/register');
-const validateLoginInput = require('../validation/login');
+import express from 'express';
+import gravatar from 'gravatar';
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import passport from 'passport';
+import {validateRegisterInput} from '../validation/register.js';
+import {validateLoginInput} from '../validation/login.js';
 
-const User = require('../models/User');
+import User from '../models/User.js';
+
+const router = express.Router();
 
 router.post('/register', function(req, res) {
 
@@ -110,4 +111,4 @@ router.get('/me', passport.authenticate('jwt', { session: false }), (req, res) =
     });
 });
 
-module.exports = router;
+export default router;

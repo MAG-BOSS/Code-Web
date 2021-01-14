@@ -1,5 +1,5 @@
 import Validator from "validator";
-import isEmpty from "./is-empty";
+import {isEmpty} from "./is-empty.js";
 
 export const validateRegisterInput=(data)=> {
     let errors = {};

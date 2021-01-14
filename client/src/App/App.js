@@ -23,9 +23,6 @@ const App = ()=>{
 
     return(
         <div className="app">
-            <div className="app-header">
-                <h1>CODEWEB</h1>
-            </div>
             <div className="editor-pane">
                 <Editor className="html-code" type="HTML" value={htmlVal} mode="htmlmixed" onBeforeChange={(editor,data,htmlVal)=>{sethtml(htmlVal)}}/>
                 <Editor className="css-code" type="CSS" value={cssVal} mode="css" onBeforeChange={(editor,data,cssVal)=>{setcss(cssVal)}}/>

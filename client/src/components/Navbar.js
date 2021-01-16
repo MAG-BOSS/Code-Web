@@ -15,7 +15,7 @@ class Navbar extends Component {
     render() {
         const {isAuthenticated, user} = this.props.auth;
         const authLinks = (
-            <ul className="navbar-nav ml-auto">
+            <ul className="navbar-nav ml-auto ">
                 <a href="#" className="nav-link" onClick={this.onLogout.bind(this)}>
                     <img src={user.avatar} alt={user.name} title={user.name}
                         className="rounded-circle"
@@ -35,7 +35,7 @@ class Navbar extends Component {
         </ul>
       )
         return(
-            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <nav className="navs" className="navbar navbar-expand-lg navbar-light bg-secondary">
                 <Link className="navbar-brand" to="/">CODEWEB</Link>
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     {isAuthenticated ? authLinks : guestLinks}

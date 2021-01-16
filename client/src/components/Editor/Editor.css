@@ -24,18 +24,27 @@
     padding-bottom: 0.5em;
 }
 .code-header{
+    padding-top: 2.5%;
     height: 30px;
     content: attr(title);
     display: flex;
     align-items: center;
     padding-left: 2%;
     font-size: 18px;
-    color: rgb(248, 246, 246);
+    color: rgb(245, 240, 240);
     background-color: rgb(8, 8, 8);
 }
 
 .collapse-button{
+    background-color:#383838 ;
+    font-size: 0.8em;
+    color: aliceblue;
+    margin-bottom: 2.5%;
     margin-left: 80%;
+}
+
+.collapse-button:hover{
+    background-color: gray;
 }
 
 .editor-box{

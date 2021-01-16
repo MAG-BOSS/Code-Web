@@ -4,6 +4,10 @@
     height: 100%;
 }
 
+h3{
+  padding-left: 2%;
+}
+
 .question-page{
     height: 83%;
     width: 100%;
@@ -22,15 +26,21 @@
 .userChoice-list{
     margin-left: 5%;
     color: rgb(242, 247, 247);
-    background-color: rgb(12,12,12);
     cursor: pointer;
+    margin-bottom: 2%;
 }
 
 .userChoice-list form select{
+  font-size: 1em;
   border-radius: 10px;
-  padding: 0.2em;
   background-color: #383838;
   color: white;
+}
+
+.userChoice-list form label{
+  color:white;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .userChoice-list form select:hover{
@@ -59,6 +69,8 @@ h1{
   }
   .button:hover {
     background:blue;
+    color: white;
+    text-decoration: none;
   }
   
   .overlay {

@@ -17,7 +17,7 @@ const App = ()=>{
 
     
     useEffect(()=>{
-        const out = `<html><head><title>Document</title><style>${dcss}</style></head><body>${dhtml}<script type="text/javascript">${djs}</script></body></html>`;
+        const out = `<html><head><title>Document</title><style> ${dcss ? dcss : null} </style></head><body> ${dhtml ? dhtml : null} <script type="text/javascript"> ${djs} </script></body></html>`;
         setOutput(out);
     },[dhtml,dcss,djs]);
 

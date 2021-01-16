@@ -12,7 +12,7 @@ const Page = ()=>{
     return(
         <div className="page">
             <div className="header">
-                <h1>Question_{userChoice}</h1>
+                <h3>Question_{userChoice}</h3>
                 <div className="userChoice-list">
                     <form>
                         <label>Choose :</label>

@@ -1,6 +1,9 @@
 import React,{useState,useEffect} from "react";
+import {useSelector} from "react-redux";
 import {useDebounce} from "use-debounce";
+import {useDispatch} from "react-redux";
 
+import {getData} from "../actions/userActions"; 
 import Editor from "../components/Editor/Editor";
 import Page from "../components/Questions/Page";
 import "./App.css";
@@ -14,8 +17,16 @@ const App = ()=>{
     const dhtml=useDebounce(htmlVal,250);
     const dcss=useDebounce(cssVal,250);
     const djs=useDebounce(jsVal,250);
+    const data = useSelector(state => state.auth);
+    console.log(data);
 
-    
+    const dispatch = useDispatch();
+    useEffect(()=>{
+        dispatch(getData());
+    },[]);
+    const temp = useSelector(state => state.user);
+    console.log(temp);
+
     useEffect(()=>{
         const out = `<html><head><title>Document</title><style> ${dcss ? dcss : null} </style></head><body> ${dhtml ? dhtml : null} <script type="text/javascript"> ${djs} </script></body></html>`;
         setOutput(out);

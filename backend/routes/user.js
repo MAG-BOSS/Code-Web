@@ -111,4 +111,14 @@ router.get('/me', passport.authenticate('jwt', { session: false }), (req, res) =
     });
 });
 
+router.get('/userData',async(req,res)=>{
+    try{
+        const userData= await User.find();
+        
+        res.status(200).json(userData);
+    }catch(error){
+        res.status(404).json({message: error.message});
+    }
+})
+
 export default router;

@@ -21,7 +21,18 @@ const UserSchema = new Schema({
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    solved_questions: {
+        type: [Number]
+    },
+    score: {
+        type: Number,
+        default: 0
+    },
+    codes_submitted:[{
+        q_id: {type: Number},
+        code: {type: String}
+    }]
 });
 
 const User = mongoose.model('users', UserSchema);

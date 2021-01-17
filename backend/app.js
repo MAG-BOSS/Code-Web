@@ -3,6 +3,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import bodyParser from 'body-parser';
 import passport from 'passport';
+import cors from "cors";
 
 import  users from './routes/user.js'; 
 
@@ -17,6 +18,7 @@ app.use(passport.initialize());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+app.use(cors());
 
 app.use('/api/users', users);
 

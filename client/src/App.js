@@ -25,8 +25,7 @@ if(localStorage.jwtToken) {
   }
 }
 
-class App extends Component {
-  render() {
+const App = ()=> {
     return (
       <Provider store = { store }>
         <Router>
@@ -41,7 +40,6 @@ class App extends Component {
           </Router>
         </Provider>
     );
-  }
 }
 
 export default App;

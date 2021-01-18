@@ -1,10 +1,11 @@
-import React,{useState} from "react";
+import React,{useEffect, useState} from "react";
 
 import {getTasks} from "../Questions/tasks/Tasks";
 import "./Page.css";
 
 const Page = ()=>{
     const [userChoice, setUserChoice] = useState(1);
+    
     const handleChange = (e)=>{
         setUserChoice(e.target.value);
     }

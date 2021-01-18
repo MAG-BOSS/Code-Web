@@ -26,14 +26,17 @@ const App = ()=>{
     },[]);
     const temp = useSelector(state => state.user);
     console.log(temp);
+    const score = temp.find( p => p._id == data.user.id);
 
     useEffect(()=>{
         const out = `<html><head><title>Document</title><style> ${dcss ? dcss : null} </style></head><body> ${dhtml ? dhtml : null} <script type="text/javascript"> ${djs} </script></body></html>`;
         setOutput(out);
     },[dhtml,dcss,djs]);
-
     return(
         <div className="app">
+            <div className="navbar navbar-expand-lg navbar-light bg-secondary d-flex" style={{height:'30px'}}><h6 className="userGreet">Hello {data.user.name} !</h6>
+                <p style={{marginTop : '1%' , marginLeft : '45%', backgroundColor: '#383838', width:'auto', paddingLeft:'9px',color:'green',paddingRight:'9px',borderRadius:'10px'}}>SCORE :{score?score.score:null} </p>
+            </div>
             <div className="editor-pane">
                 <Editor className="html-code" type="HTML" value={htmlVal} mode="htmlmixed" onBeforeChange={(editor,data,htmlVal)=>{sethtml(htmlVal)}}/>
                 <Editor className="css-code" type="CSS" value={cssVal} mode="css" onBeforeChange={(editor,data,cssVal)=>{setcss(cssVal)}}/>
@@ -47,7 +50,7 @@ const App = ()=>{
                 <iframe srcDoc={output} title="Output"/>
             </div>
             <div className="question-pane">
-                <Page/>
+                <Page />
             </div>
         </div>
        

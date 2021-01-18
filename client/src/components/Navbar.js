@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { connect,useSelector} from 'react-redux';
 import { logoutUser } from '../actions/authentication';
 import { withRouter } from 'react-router-dom';
 
 class Navbar extends Component {
-
     onLogout(e) {
         e.preventDefault();
         this.props.logoutUser(this.props.history);
@@ -35,9 +34,9 @@ class Navbar extends Component {
         </ul>
       )
         return(
-            <nav className="navs" className="navbar navbar-expand-lg navbar-light bg-secondary">
+            <nav className="navs" className="navbar navbar-expand-lg navbar-light bg-secondary" style={{height:'35px'}}>
                 <Link className="navbar-brand" to="/">CODEWEB</Link>
-                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                <div className="collapse navbar-collapse d-flex" id="navbarSupportedContent">
                     {isAuthenticated ? authLinks : guestLinks}
                 </div>
             </nav>

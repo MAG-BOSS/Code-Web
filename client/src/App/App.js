@@ -23,7 +23,7 @@ const App = ()=>{
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(getData());
-    },[]);
+    },[dispatch]);
     const temp = useSelector(state => state.user);
     console.log(temp);
     const score = temp.find( p => p._id == data.user.id);

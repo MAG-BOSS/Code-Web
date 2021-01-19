@@ -1,46 +1,10 @@
 const tasks = [
-    {   id:1,
-        name:"Dropdown Menu",
-        src:`<html>
-        <head>
-        <style>
-        .dropdown {
-          position: relative;
-          display: inline-block;
-        }
-        
-        .dropdown-content {
-          display: none;
-          position: absolute;
-          background-color: #f9f9f9;
-          min-width: 160px;
-          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          padding: 12px 16px;
-          z-index: 1;
-        }
-        
-        .dropdown:hover .dropdown-content {
-          display: block;
-        }
-        </style>
-        </head>
-        <body>
-        
-        <h2>Dropdown</h2>
-        <p>Hover the mouse over the below button.</p>
-        
-        <div class="dropdown">
-          <button>DROPDOWN</button>
-          <div class="dropdown-content">
-          <p>Hello World!</p>
-          </div>
-        </div>
-        
-        </body>
-        </html>
-        `,
-        description:"\nInstructions: \n\n1. Try to replicate the dropdown button shown on the\n rightmost pane. \n2.Page formatting attributes like color, font-size etc, will\n not be checked. \n3.Text on the result and question pane must match.\n\nMarks Distribution:\n\n1.Working of Button : 8 \n2.Text Displayed : 2\n\n Happy Coding!",
-        maxScore:10
+    {
+      id:1,
+      name:"Welcome",
+      src:`<html><body><h1>You are not supposed to solve this question !</h1></body></html>`,
+      description:"This is not supposed to be solved!!",
+      maxScore:0
     },
     {
         id:2,
@@ -90,11 +54,48 @@ const tasks = [
         maxScore:15
     },
     {
-        id:3,
-        name:"Web Page",
-        src:`<html><body>Work In Progress</body></html>`,
-        description:"1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi1.hllo \n2.hi",
-        maxScore:10
+      id:3,
+      name:"Dropdown Menu",
+      src:`<html>
+      <head>
+      <style>
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        padding: 12px 16px;
+        z-index: 1;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      </style>
+      </head>
+      <body>
+      
+      <h2>Dropdown</h2>
+      <p>Hover the mouse over the below button.</p>
+      
+      <div class="dropdown">
+        <button>DROPDOWN</button>
+        <div class="dropdown-content">
+        <p>Hello World!</p>
+        </div>
+      </div>
+      
+      </body>
+      </html>
+      `,
+      description:"\nInstructions: \n\n1. Try to replicate the dropdown button shown on the\n rightmost pane. \n2.Page formatting attributes like color, font-size etc, will\n not be checked. \n3.Text on the result and question pane must match.\n\nMarks Distribution:\n\n1.Working of Button : 8 \n2.Text Displayed : 2\n\n Happy Coding!",
+      maxScore:10
     }
 ];
 

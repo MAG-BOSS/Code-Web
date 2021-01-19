@@ -45,7 +45,26 @@ const App = ()=>{
             <div className="result-pane">
                 <div className="result-header">
                     <h1>RESULT</h1>
-                    <button className="submit-button">Submit</button>
+                    <a href="#popup2" className="submit-button">Submit</a>
+                </div>
+                <div id="popup2" className="overlay">
+	                <div className="popup">
+		                <h2>Submission Form</h2>
+                        <br/>
+                        <h6>Instructions:</h6>
+                        <p>1. Once submitted you will not be able to modify your submission.<br/>2. Incorrect ID will lead to zero marks.<br/>3. Checking can take upto 2 days. So, be patient.</p>
+		                <a className="close" href="#">&times;</a>
+		                <div className="content">
+                        <form>
+                            <div class="form-group">
+                                <label>Question ID</label>
+                                <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Enter ID of the question you have solved"/>
+                                <small id="emailHelp" class="form-text text-muted">Incorrect ID will lead to zero score.</small>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+		                </div>
+	                </div>
                 </div>
                 <iframe srcDoc={output} title="Output"/>
             </div>

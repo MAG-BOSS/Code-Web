@@ -17,17 +17,23 @@ const App = ()=>{
     const dhtml=useDebounce(htmlVal,250);
     const dcss=useDebounce(cssVal,250);
     const djs=useDebounce(jsVal,250);
+
     const data = useSelector(state => state.auth);
-    console.log(data);
 
     const dispatch = useDispatch();
     useEffect(()=>{
         dispatch(getData());
     },[dispatch]);
     const temp = useSelector(state => state.user);
-    console.log(temp);
     const score = temp.find( p => p._id == data.user.id);
+    score?console.log(score.solved_questions):console.log('h');
 
+    const [submitData , setSubmitData] = useState({solved_questions:[Number],codes_submitted:[{q_id: {type: Number},code: {type: String}}]});
+    console.log(submitData);
+    const [submitted_qid, setSubmitted] = useState(null);
+    const handleChange = (e) =>{
+        setSubmitted(e.target.value);
+    };
     useEffect(()=>{
         const out = `<html><head><title>Document</title><style> ${dcss ? dcss : null} </style></head><body> ${dhtml ? dhtml : null} <script type="text/javascript"> ${djs} </script></body></html>`;
         setOutput(out);
@@ -58,7 +64,7 @@ const App = ()=>{
                         <form>
                             <div class="form-group">
                                 <label>Question ID</label>
-                                <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Enter ID of the question you have solved"/>
+                                <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Enter ID of the question you have solved" onChange={handleChange}/>
                                 <small id="emailHelp" class="form-text text-muted">Incorrect ID will lead to zero score.</small>
                             </div>
                             <button type="submit" class="btn btn-primary">Submit</button>

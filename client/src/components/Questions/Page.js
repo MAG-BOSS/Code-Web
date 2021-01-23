@@ -8,17 +8,23 @@ const Page = ()=>{
     const [userChoice, setUserChoice] = useState(1);
     const userId = (useSelector(state => state.auth.user)).id;
     const userData = useSelector(state => state.user);
-    const submittedQuestions = (userData.find(p => p._id == userId)).solved_questions;
+    const submittedQuestion = (userData.find(p => p._id == userId));
+    const submittedQuestions = submittedQuestion? submittedQuestion.solved_questions : null;
     console.log(submittedQuestions);
     
     const handleChange = (e)=>{
         setUserChoice(e.target.value);
     }
-    const questionsToBeDisplayed = (givenData) =>{
-        return !submittedQuestions.includes(Tasks.id);
-    };
-    const Tasks = getTasks();
-    const filterTasks = Tasks.filter(questionsToBeDisplayed);
+    var Tasks = getTasks();
+    var filterTasks;
+    if (submittedQuestions) {
+        const questionsToBeDisplayed = (givenData) =>{
+            return !submittedQuestions.includes(Tasks.id);
+        };
+        filterTasks = Tasks.filter(questionsToBeDisplayed);
+    } else {
+        filterTasks = Tasks;
+    }
     return(
         <div className="page">
             <div className="header">

@@ -1,5 +1,5 @@
 import * as api from "../api";
-import {FETCH_ALL} from "./types";
+import {FETCH_ALL , GET_ALL} from "./types";
 
 export const getData=() => async(dispatch) => {
     try {
@@ -9,3 +9,4 @@ export const getData=() => async(dispatch) => {
         console.log(error.message);
     }
 }
+

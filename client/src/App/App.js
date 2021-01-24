@@ -24,6 +24,9 @@ const App = ()=>{
     useEffect(()=>{
         dispatch(getData());
     },[dispatch]);
+
+    const userChoice = useSelector(state => state.choice);
+
     const temp = useSelector(state => state.user);
     const score = temp.find( p => p._id == data.user.id);
     score?console.log(score.solved_questions):console.log('h');
@@ -61,14 +64,8 @@ const App = ()=>{
                         <p>1. Once submitted you will not be able to modify your submission.<br/>2. Incorrect ID will lead to zero marks.<br/>3. Checking can take upto 2 days. So, be patient.</p>
 		                <a className="close" href="#">&times;</a>
 		                <div className="content">
-                        <form>
-                            <div class="form-group">
-                                <label>Question ID</label>
-                                <input type="number" class="form-control" aria-describedby="emailHelp" placeholder="Enter ID of the question you have solved" onChange={handleChange}/>
-                                <small id="emailHelp" class="form-text text-muted">Incorrect ID will lead to zero score.</small>
-                            </div>
+                            <p>You are going to submit the code for question ID : {userChoice}</p>
                             <button type="submit" class="btn btn-primary">Submit</button>
-                        </form>
 		                </div>
 	                </div>
                 </div>

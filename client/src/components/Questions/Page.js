@@ -1,8 +1,9 @@
 import React,{useEffect, useState} from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 import {getTasks} from "../Questions/tasks/Tasks";
 import "./Page.css";
+import { GET_ALL } from "../../actions/types";
 
 const Page = ()=>{
     const [userChoice, setUserChoice] = useState(1);
@@ -11,9 +12,10 @@ const Page = ()=>{
     const submittedQuestion = (userData.find(p => p._id == userId));
     const submittedQuestions = submittedQuestion? submittedQuestion.solved_questions : null;
     console.log(submittedQuestions);
-    
+    const dispatch = useDispatch();
     const handleChange = (e)=>{
         setUserChoice(e.target.value);
+        dispatch({type: GET_ALL, payload: e.target.value});
     }
     var Tasks = getTasks();
     var filterTasks;

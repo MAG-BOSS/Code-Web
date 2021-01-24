@@ -33,10 +33,7 @@ const App = ()=>{
 
     const [submitData , setSubmitData] = useState({solved_questions:[Number],codes_submitted:[{q_id: {type: Number},code: {type: String}}]});
     console.log(submitData);
-    const [submitted_qid, setSubmitted] = useState(null);
-    const handleChange = (e) =>{
-        setSubmitted(e.target.value);
-    };
+    
     useEffect(()=>{
         const out = `<html><head><title>Document</title><style> ${dcss ? dcss : null} </style></head><body> ${dhtml ? dhtml : null} <script type="text/javascript"> ${djs} </script></body></html>`;
         setOutput(out);

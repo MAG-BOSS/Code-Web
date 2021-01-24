@@ -13,6 +13,11 @@ const Page = ()=>{
     const submittedQuestions = submittedQuestion? submittedQuestion.solved_questions : null;
     console.log(submittedQuestions);
     const dispatch = useDispatch();
+    
+    useEffect(()=>{
+        dispatch({type: GET_ALL, payload: 1});
+    },[dispatch]);
+
     const handleChange = (e)=>{
         setUserChoice(e.target.value);
         dispatch({type: GET_ALL, payload: e.target.value});

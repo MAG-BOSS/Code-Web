@@ -31,22 +31,26 @@ const App = ()=>{
     const score = temp.find( p => p._id == data.user.id);
     score?console.log(score.solved_questions):console.log('h');
 
-    const [submitData , setSubmitData] = useState({solved_questions:[Number],codes_submitted:[{q_id: {type: Number},code: {type: String}}]});
+    const [submitData , setSubmitData] = useState({solved_questions:[Number],codes_submitted:[{q_id:Number,code:String}]});
     console.log(submitData);
     
     useEffect(()=>{
         const out = `<html><head><title>Document</title><style> ${dcss ? dcss : null} </style></head><body> ${dhtml ? dhtml : null} <script type="text/javascript"> ${djs} </script></body></html>`;
         setOutput(out);
     },[dhtml,dcss,djs]);
+
+    const handleClick = () =>{
+
+    };
     return(
         <div className="app">
             <div className="navbar navbar-expand-lg navbar-light bg-secondary d-flex" style={{height:'30px'}}><h6 className="userGreet">Hello {data.user.name} !</h6>
                 <p style={{marginTop : '1%' , marginLeft : '45%', backgroundColor: '#383838', width:'auto', paddingLeft:'9px',color:'green',paddingRight:'9px',borderRadius:'10px'}}>SCORE :{score?score.score:null} </p>
             </div>
             <div className="editor-pane">
-                <Editor className="html-code" type="HTML" value={htmlVal} mode="htmlmixed" onBeforeChange={(editor,data,htmlVal)=>{sethtml(htmlVal)}}/>
-                <Editor className="css-code" type="CSS" value={cssVal} mode="css" onBeforeChange={(editor,data,cssVal)=>{setcss(cssVal)}}/>
-                <Editor className="js-code" type="JS" value={jsVal} mode="javascript" onBeforeChange={(editor,data,jsVal)=>{setjs(jsVal)}}/>
+                <Editor className="html-code" type="HTML" value={htmlVal} mode="htmlmixed" onBeforeChange={(editor,data,htmlVal)=> sethtml(htmlVal)}/>
+                <Editor className="css-code" type="CSS" value={cssVal} mode="css" onBeforeChange={(editor,data,cssVal)=>setcss(cssVal)}/>
+                <Editor className="js-code" type="JS" value={jsVal} mode="javascript" onBeforeChange={(editor,data,jsVal)=>setjs(jsVal)}/>
             </div>
             <div className="result-pane">
                 <div className="result-header">
@@ -62,7 +66,7 @@ const App = ()=>{
 		                <a className="close" href="#">&times;</a>
 		                <div className="content">
                             <p>You are going to submit the code for question ID : {userChoice}</p>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                            <button type="submit" class="btn btn-primary" onClick={handleClick}>Submit</button>
 		                </div>
 	                </div>
                 </div>

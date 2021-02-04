@@ -11,7 +11,6 @@ const Page = ()=>{
     const userData = useSelector(state => state.user);
     const submittedQuestion = (userData.find(p => p._id == userId));
     const submittedQuestions = submittedQuestion? submittedQuestion.solved_questions : null;
-    console.log(submittedQuestions);
     const dispatch = useDispatch();
     
     useEffect(()=>{

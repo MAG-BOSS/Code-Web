@@ -3,7 +3,7 @@ import {useSelector} from "react-redux";
 import {useDebounce} from "use-debounce";
 import {useDispatch} from "react-redux";
 
-import {getData} from "../actions/userActions"; 
+import {getData,updatePost} from "../actions/userActions"; 
 import Editor from "../components/Editor/Editor";
 import Page from "../components/Questions/Page";
 import "./App.css";
@@ -31,17 +31,29 @@ const App = ()=>{
     const score = temp.find( p => p._id == data.user.id);
     score?console.log(score.solved_questions):console.log('h');
 
-    const [submitData , setSubmitData] = useState({solved_questions:[Number],codes_submitted:[{q_id:Number,code:String}]});
-    console.log(submitData);
+    const [submitData , setSubmitData] = useState({solved_questions:'',codes_submitted:''});
+    const tempFunction = () =>{
+        if(score){
+        setSubmitData({...submitData,solved_questions:score.solved_questions});
+        setSubmitData({...submitData,codes_submitted:score.codes_submitted});
+        };
+    };
+    useEffect(()=>{
+            tempFunction();
+    },[dispatch]);
+    const handleClick = () =>{
+        const tempData = score;
+        setSubmitData({...submitData,solved_questions:score.solved_questions})
+    };
+    const handleSubmit = () =>{
+        dispatch(updatePost(data.user.id,submitData));
+    }
     
     useEffect(()=>{
         const out = `<html><head><title>Document</title><style> ${dcss ? dcss : null} </style></head><body> ${dhtml ? dhtml : null} <script type="text/javascript"> ${djs} </script></body></html>`;
         setOutput(out);
     },[dhtml,dcss,djs]);
 
-    const handleClick = () =>{
-
-    };
     return(
         <div className="app">
             <div className="navbar navbar-expand-lg navbar-light bg-secondary d-flex" style={{height:'30px'}}><h6 className="userGreet">Hello {data.user.name} !</h6>
@@ -63,7 +75,7 @@ const App = ()=>{
                         <br/>
                         <h6>Instructions:</h6>
                         <p>1. Once submitted you will not be able to modify your submission.<br/>2. Incorrect ID will lead to zero marks.<br/>3. Checking can take upto 2 days. So, be patient.</p>
-		                <a className="close" href="#">&times;</a>
+		                <a className="close" href="#" onClick={handleSubmit}>&times;</a>
 		                <div className="content">
                             <p>You are going to submit the code for question ID : {userChoice}</p>
                             <button type="submit" class="btn btn-primary" onClick={handleClick}>Submit</button>

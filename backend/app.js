@@ -7,7 +7,7 @@ import cors from "cors";
 
 import  users from './routes/user.js'; 
 
-mongoose.connect("mongodb+srv://dbUser:AbcShi12@cluster0.demdm.mongodb.net/<dbname>?retryWrites=true&w=majority", { useNewUrlParser: true, useUnifiedTopology:true }).then(
+mongoose.connect("WRITE YOUR MONGODB URL HERE", { useNewUrlParser: true, useUnifiedTopology:true }).then(
     () => {console.log('Database is connected') },
     err => { console.log('Can not connect to the database'+ err)}
 );
